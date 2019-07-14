@@ -38,6 +38,7 @@ int main(){
 	for(int i=0;i<e;i++){
 	int s,t;
 	cin>>s>>t;
+	s--,t--;
 	g[s].push_back(t);
 	g[t].push_back(s);
 	}
@@ -46,10 +47,10 @@ int main(){
 	sort(art.begin(),art.end());
 	sort(bridge.begin(),bridge.end());
 	//関節点
-	cout<<art.size()<<endl;
-	for(int i=0;i<art.size();i++)cout<<art[i]<<endl;	
+	//cout<<art.size()<<endl;
+	//for(int i=0;i<art.size();i++)cout<<art[i]<<endl;	
 	//橋
 	cout<<bridge.size()<<endl;
-	for(int i=0;i<bridge.size();i++)cout<<bridge[i].first<<' '<<bridge[i].second<<endl;
+	//for(int i=0;i<bridge.size();i++)cout<<bridge[i].first<<' '<<bridge[i].second<<endl;
 	return 0;
 }
