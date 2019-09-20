@@ -4,10 +4,12 @@ typedef long long int ll;
 typedef pair<ll,ll> mp;
 ll inf =  1e9;
 
+//
 // できれば隣接リスト形式でかけるようにする
 // Add application Disconnect Graph => かなり早い
 //https://atcoder.jp/contests/code-thanks-festival-2017-open/submissions/me
 // MIS1_1 => MIS1_2 844ms => 6ms
+
 struct Graph{
     ll n;
     vector<vector<bool> > mat;
