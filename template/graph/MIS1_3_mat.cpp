@@ -7,8 +7,6 @@ ll inf =  1e9;
 //行列形式(mat)
 //Max Independent Set(MIS)
 //Maximum Clique
-//
-// できれば隣接リスト形式でかけるようにする
 // Add application Disconnect Graph => かなり早い
 //https://atcoder.jp/contests/code-thanks-festival-2017-open/submissions/me
 // MIS1_1 => MIS1_2 844ms => 6ms
