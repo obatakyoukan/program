@@ -10,7 +10,7 @@
 
 ## FILE and algorithm
 
-===
+
 
 1. MIS1\_1.cpp 
 2. MIS1\_2.cpp 
@@ -20,9 +20,7 @@
 
 - Degree 2 and 3
 
-===
+
 
 ## 参考資料
-
-- Exact Exponential Algorithms October 12, 2010
-  - Fedor V. Fomin and Dieter Kratsch 
+ ***_ Exact Exponential Algorithms _***  Fedor V. Fomin and Dieter Kratsch ( October 12, 2010 )
