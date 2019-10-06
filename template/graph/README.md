@@ -1,15 +1,24 @@
 ## List Program
 ====
+'''
+## Application
+ 1. Maximum Independent Set
 
---Maximum Independent Set
---Maximum Clique
+ 2. Maximum Clique
+'''
 
+===
+##FILE and algorithm
 1. MIS1\_1.cpp 
 2. MIS1\_2.cpp 
 
--Connected Graph
+- Connected Graph
 3. MIS1\_3.cpp 
 
--Degree 2 and 3
+- Degree 2 and 3
 
+===
+## 参考資料
 
+- Exact Exponential Algorithms October 12, 2010
+  - Fedor V. Fomin and Dieter Kratsch 
