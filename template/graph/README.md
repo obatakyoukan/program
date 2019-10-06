@@ -23,4 +23,4 @@
 
 
 ## 参考資料
- ***_ Exact Exponential Algorithms _***  Fedor V. Fomin and Dieter Kratsch ( October 12, 2010 )
+ ** Exact Exponential Algorithms **  Fedor V. Fomin and Dieter Kratsch ( October 12, 2010 )
