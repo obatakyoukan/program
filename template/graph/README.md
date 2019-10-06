@@ -14,11 +14,11 @@
 
 1. MIS1\_1.cpp 
 2. MIS1\_2.cpp 
-
+- Degree 0 and 1
 - Connected Graph
 3. MIS1\_3.cpp 
-
-- Degree 2 and 3
+- Degree 2 
+- Degree 3
 
 
 
