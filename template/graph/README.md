@@ -2,9 +2,11 @@
 
 ## Application
 ```
- 1. Maximum Independent Set
+ 1. Maximum Independent Set(MIS)
 
  2. Maximum Clique
+   - Maximum Independent Set About Complement Graph
+  
 ```
 
 
