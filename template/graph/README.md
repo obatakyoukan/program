@@ -25,7 +25,7 @@
 
 ## 実験結果
 
-1. [**CODE THANKS FESTIVAL 2017(Parallel) , G Mixture Drug**]( https://atcoder.jp/contests/code-thanks-festival-2017-open/submissions?f.Task=code_thanks_festival_2017_g&f.Language=3003&f.Status=AC&f.User=obata1234/ )
+1. [**CODE THANKS FESTIVAL 2017(Parallel) , G Mixture Drug**]( https://atcoder.jp/contests/code-thanks-festival-2017-open/submissions?f.Task=code_thanks_festival_2017_g&f.Language=3003&f.Status=AC&f.User=obata1234 )
 
 ## 参考資料
  **Exact Exponential Algorithms**  Fedor V. Fomin and Dieter Kratsch ( October 12, 2010 )
