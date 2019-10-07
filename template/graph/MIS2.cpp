@@ -189,6 +189,19 @@ struct Graph{
 	    }
 	    return res + MIS( next );
 	}
+	
+	// Case: Disconnect Graph 入れる位置は重要かも!!!
+	vector<ll> sub = Connect( rest );
+	if( sub.size() != rest.size() ){
+	    vector<ll> subrest;
+	    for(auto i:rest){
+		if( *lower_bound( sub.begin() , sub.end() , i ) != i ){
+		    subrest.push_back( i );
+		}
+	    }
+	    return MIS(sub) + MIS(subrest);
+	}
+	
 	// Case: minimum degree is 2
 	if( mind == 2 ){
 	    vector<ll> subedge = SubEdge( rest , mini );
@@ -294,17 +307,6 @@ struct Graph{
 		}
 	    }
 	    return max( 1 + MIS( next1 ) , MIS( next2 ) );
-	}
-	// Case: Disconnect Graph
-	vector<ll> sub = Connect( rest );
-	if( sub.size() != rest.size() ){
-	    vector<ll> subrest;
-	    for(auto i:rest){
-		if( *lower_bound( sub.begin() , sub.end() , i ) != i ){
-		    subrest.push_back( i );
-		}
-	    }
-	    return MIS(sub) + MIS(subrest);
 	}
 	// Case: G is 4 or 5 regular 
 	if( maxd == mind &&  ( mind == 4 || mind == 5 ) ){
