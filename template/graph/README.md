@@ -23,7 +23,7 @@
 - Degree 3
 
 
-## 実験結果
+## コード確認
 
 1. [**CODE THANKS FESTIVAL 2017(Parallel) , G Mixture Drug**]( https://atcoder.jp/contests/code-thanks-festival-2017-open/submissions?f.Task=code_thanks_festival_2017_g&f.Language=3003&f.Status=AC&f.User=obata1234 )
 
