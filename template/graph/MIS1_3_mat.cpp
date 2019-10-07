@@ -66,6 +66,15 @@ struct Graph{
 	for(auto i:rest)if(mat[a][i])res.push_back(i);
 	return res;
     }
+    vector<ll> SubDegree( vector<ll> &rest ){
+	vector<ll> res( rest.size() , 0 );
+	for(int i=0;i<rest.size();i++){
+	    for(int j=0;j<rest.size();j++){
+		if( mat[ rest[i] ][ rest[j] ] ) res[i]++;
+	    }
+	}
+	return res;
+    }
     ll SubDegree(vector<ll> &rest, ll a){
 	ll res = 0;
 	for(auto i:rest){
@@ -205,7 +214,7 @@ struct Graph{
 		    set<ll> NW = Neighbor( rest , w );//N[w]
 		    NW.insert( w );
 		    vector<ll> next1,next2;//1:w and mini(v) 2: two Neighbors of v
-		    for(auto i:rest){//this area ?
+		    for(auto i:rest){
 			if( N1.find( i ) == N1.end() && N2.find( i ) == N2.end() ){//N^2[v] not find
 			    next2.push_back( i );
 			    if( NW.find( i ) == NW.end() ) next1.push_back( i );
@@ -225,6 +234,58 @@ struct Graph{
 	    }
 	}
 	// Case: minimum degree is 3
+	if( mind == 3 ){
+	    vector<ll> sub = SubEdge( rest , mini );
+	    vector<ll> subd = SubDegree( sub );
+	    vector<ll> next1,next2;//next1:  G\N[v]
+	    set<ll> N1 = Neighbor( rest , mini );
+	    N1.insert( mini );
+	    set<ll> MV = Mirrors( rest , mini );// M[v]
+	    for(auto i:rest ){
+		if( N1.find( i ) == N1.end() )next1.push_back( i );
+	    }
+	    
+	    ll edge_cnt = 0;//number of edge 
+	    for(auto i:subd) edge_cnt += i;
+
+	    if( edge_cnt == 0 ){
+		if( !MV.empty() ){
+		    for(auto i:rest){
+			if( MV.find( i ) == MV.end() && i != mini ){//next2 : G\( M(v) or {v} )
+			    next2.push_back( i );
+			}
+		    }
+		    return max( 1 + MIS1( next1 ) , MIS1(next2 ) );
+		}else{
+		    vector<ll> nextt[3];
+		    //next1 G/(N[ {u1,u2} ]  )
+		    //next2 G/(N[ {u1,u3} ] or {u2} )
+		    //next3 G/(N[ {u2,u3} ] or {u1} )
+		    set<ll> NN[3];
+		    for( int i=0;i<3;i++ ) NN[i] = Neighbor(rest , sub[i] );
+		    for( int i=0;i<3;i++ ) NN[i].insert( sub[i] );
+		    
+		    for( int i=0;i<3;i++ ){
+			for(auto j:rest ){
+			    if( (i==0|| j != sub[i] )&& NN[(i+1)%3].find( j ) == NN[(i+1)%3].end() && NN[(i+2)%3].find( j ) == NN[(i+2)%3].end() ) nextt[i].push_back( j );
+			    //if( sub[i] != j &&  NN[(i+1)%3].find( j ) == NN[(i+1)%3].end() && NN[(i+2)%3].find( j ) == NN[(i+2)%3].end() ) nextt[i].push_back( j );
+			    //下の方ができれば早そうだけど嘘だと思う. あとで確かめ
+			}
+		    }
+		    return max( max( 1 + MIS1( next1 ) , 2 + MIS1( nextt[0] ) ),  max(2+ MIS1( nextt[1] ) , 2 + MIS1( nextt[2] ) ) );
+		}
+	    }else if( edge_cnt == 1 || edge_cnt == 2 ){
+		for(auto i:rest){
+		    if( MV.find( i ) == MV.end() && i != mini ){//next2 : G\( M(v) or {v} )
+			next2.push_back( i );
+		    }
+		}
+		return max( 1 +  MIS1( next1 ) , MIS1( next2 ) );
+	    }else{
+		return 1 + MIS1( next1 );
+	    }
+
+	}
 	// Case: Disconnect Graph
 	vector<ll> sub = Connect( rest );
 	if( sub.size() != rest.size() ){
