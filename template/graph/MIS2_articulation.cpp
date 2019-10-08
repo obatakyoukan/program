@@ -360,8 +360,8 @@ struct Graph{
 	    	}
 	    	link.solve();
 	    	for( auto i: link.articulation ){
-			if( articulation.insert( i ).second ) fix.push_back( i );
-			v = i;
+			if( articulation.insert( change[i] ).second ) fix.push_back( change[i] );
+			v = change[i];
 	    	}
 	    }
 	    if( v != -1 ){
