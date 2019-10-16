@@ -35,7 +35,7 @@ struct Maxclique{
 	    }
 	}//
 	//int size(){ return sz; }
-	int size(){ return v.size();}
+	int size(){ return sz;}
 	void push( int ii ){ v.push_back( Vertex(ii) ),sz++; }
 	void pop(){ v.pop_back() , sz--; }
 	Vertex& at( int ii){ return v[ii]; }
@@ -51,7 +51,8 @@ struct Maxclique{
 	int size(){ return i.size(); }
 	int& at( int ii ){ return i[ii]; }
 	ColorClass& operator = ( ColorClass &dh ){
-	    for(int j=0;j<dh.sz;j++) i[j] = dh.i[j];
+	    for(int j=0;j<size();j++) i[j] = dh.i[j];
+	    for(int j=size();j<dh.size();j++)push( dh.i[j] );
 	    sz = dh.sz;
 	    return *this;
 	}
@@ -192,19 +193,25 @@ struct Maxclique{
     }
 };
 
-void read_dimacs( string name , vector<vector<bool> > &conn , int &size){
-    ifstream f( name.c_str() );
-    string buffer;
+void read_dimacs(  vector<vector<bool> > &conn , int &size){
     set<int> v;
     multimap<int,int> e;
-    while( !getline( f,buffer).eof() ){
-	if( buffer[0] == 'e'){
+    int n,m;
+    cin>>n>>m;
+    if( n == 0) {
+	size = 0;
+	return;
+    }
+    if( m == 0 ){
+	size = 1;
+	return;
+    }
+    for(int i=0;i<m;i++){
 	    int vi , vj ;
-	    sscanf(buffer.c_str(),"%*c %d %d", &vi , &vj);
+	    cin>>vi>>vj;
 	    v.insert( vi );
 	    v.insert( vj );
 	    e.insert( make_pair( vi , vj ) );
-	}
     }
     size = *v.rbegin() + 1;
     conn = vector<vector<bool> >( size , vector<bool>( size ,false) );
@@ -213,16 +220,16 @@ void read_dimacs( string name , vector<vector<bool> > &conn , int &size){
 	conn[it->second][it->first] = true;
     }
     //cout<<"|E| = "<<e.size()<<" |V| = "<<v.size()<<" p = "<< (double) e.size()/ ( v.size() * (v.size()-1)/2 )<<endl;
-    f.close();
 }
 
 int main(){
-    string name;
     vector<vector<bool> > conn;
     int size;
-    read_dimacs( name , conn , size);
-    clock_t st1 = time( NULL);
-    clock_t st2 = clock();
+    read_dimacs( conn , size );
+    if( conn.size() == 0 ){
+	cout<<size<<endl;
+	return 0;
+    }
     vector<int> qmax;
     int qsize;
     Maxclique m(conn,size);
