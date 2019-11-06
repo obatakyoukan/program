@@ -1,0 +1,72 @@
+obatakyBookpuro:mcqd obata$ ./a.out ../experiment/DIMACS_all_ascii/brock400_1.clq 
+Filename : ../experiment/DIMACS_all_ascii/brock400_1.clq
+|E| = 59723  |V| = 400 p = 0.748409
+MCS START
+EXTEND SORT Clique Update. 
+ Clique Size: 19
+Number of Steps: 658  Clique Update. Size: 20
+Number of Steps: 8418  Clique Update. Size: 21
+Number of Steps: 22953  Clique Update. Size: 22
+Number of Steps: 90819  Clique Update. Size: 23
+
+Number of Steps: 5086243  Clique Update. Size: 24
+Number of Steps: 25733459  Clique Update. Size: 25
+Number of Steps: 56545823  Clique Update. Size: 27
+Max size = 27
+Maximum Clique : 18 20 39 68 85 90 92 93 108 134 135 142 150 178 186 207 221 234 252 260 262 276 304 311 348 380 388 
+Number of Steps = 89599724
+Time = 1587.05
+obatakyBookpuro:mcqd obata$ 
+obatakyBookpuro:mcqd obata$ vim mcs.cpp 
+obatakyBookpuro:mcqd obata$ ./a.out ../experiment/DIMACS_all_ascii/brock400_3.clq 
+Filename : ../experiment/DIMACS_all_ascii/brock400_3.clq
+|E| = 59681  |V| = 400 p = 0.747882
+MCS START
+EXTEND SORT Clique Update. 
+ Clique Size: 18
+Number of Steps: 31  Clique Update. Size: 19
+Number of Steps: 166  Clique Update. Size: 20
+Number of Steps: 3162  Clique Update. Size: 21
+Number of Steps: 10904  Clique Update. Size: 22
+Number of Steps: 172905  Clique Update. Size: 23
+Number of Steps: 2195238  Clique Update. Size: 24
+Number of Steps: 60335947  Clique Update. Size: 31
+Max size = 31
+Maximum Clique : 18 20 39 68 73 85 90 92 93 102 108 134 135 142 150 178 186 207 221 223 234 252 260 262 276 304 311 348 365 380 388 
+Number of Steps = 65439276
+Time = 1085.53
+obatakyBookpuro:mcqd obata$ vim mcs.cpp 
+obatakyBookpuro:mcqd obata$ g++ mcs.cpp -O3
+obatakyBookpuro:mcqd obata$ ./a.out ../experiment/DIMACS_all_ascii/brock400_3.clq 
+Filename : ../experiment/DIMACS_all_ascii/brock400_3.clq
+|E| = 59681  |V| = 400 p = 0.747882
+MCS START
+EXTEND SORT Clique Update. 
+ Clique Size: 18
+Number of Steps: 85  Clique Update. Size: 19
+Number of Steps: 167  Clique Update. Size: 20
+Number of Steps: 11565  Clique Update. Size: 21
+Number of Steps: 86972  Clique Update. Size: 22
+Number of Steps: 171103  Clique Update. Size: 23
+Number of Steps: 1458530  Clique Update. Size: 24
+Number of Steps: 37534168  Clique Update. Size: 31
+Max size = 31
+Maximum Clique : 18 20 39 68 73 85 90 92 93 102 108 134 135 142 150 178 186 207 221 223 234 252 260 262 276 304 311 348 365 380 388 
+Number of Steps = 40956830
+Time = 390.975
+obatakyBookpuro:mcqd obata$ ./a.out ../experiment/DIMACS_all_ascii/brock400_1.clq 
+Filename : ../experiment/DIMACS_all_ascii/brock400_1.clq
+|E| = 59723  |V| = 400 p = 0.748409
+MCS START
+EXTEND SORT Clique Update. 
+ Clique Size: 19
+Number of Steps: 1347  Clique Update. Size: 20
+Number of Steps: 11196  Clique Update. Size: 21
+Number of Steps: 31335  Clique Update. Size: 22
+Number of Steps: 149836  Clique Update. Size: 23
+Number of Steps: 6487905  Clique Update. Size: 24
+Number of Steps: 51927694  Clique Update. Size: 26
+Max size = 26
+Maximum Clique : 18 20 39 68 85 90 92 93 134 135 142 150 178 186 207 221 234 252 260 262 276 304 311 348 380 388 
+Number of Steps = 87903220
+Time = 848.705

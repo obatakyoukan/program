@@ -51,7 +51,8 @@ struct Maxclique{
 	int size(){ return i.size(); }
 	int& at( int ii ){ return i[ii]; }
 	ColorClass& operator = ( ColorClass &dh ){
-	    for(int j=0;j<dh.sz;j++) i[j] = dh.i[j];
+	    for(int j=0;j<size();j++) i[j] = dh.i[j];
+	    for(int j=size();j<dh.size();j++) push( dh.i[j] );
 	    sz = dh.sz;
 	    return *this;
 	}
@@ -115,7 +116,7 @@ struct Maxclique{
 		    pk++;
 		    expand( Rp );
 		}else if( Q.size() > QMAX.size() ){
-		    //cout<<"Step = "<<pk<<" current max. clique size = "<<Q.size()<<endl;
+		    cout<<"Step = "<<pk<<" current max. clique size = "<<Q.size()<<endl;
 		    QMAX = Q;
 		}
 		Rp.dispose();
@@ -144,7 +145,7 @@ struct Maxclique{
 		    expand_dyn( Rp );
 		    level--;
 		}else if( Q.size() > QMAX.size() ){
-		    //cout<<"Step = "<<pk<<" current max. clique size = "<<Q.size()<<endl;
+		    cout<<"Step = "<<pk<<" current max. clique size = "<<Q.size()<<endl;
 		    QMAX = Q;
 		}
 		Rp.dispose();
@@ -216,18 +217,43 @@ void read_dimacs( string name , vector<vector<bool> > &conn , int &size){
     f.close();
 }
 
-int main(){
+int main(int argc,char *argv[]){
     string name;
+    if( argc == 2 ){
+	name = argv[1];
+    }else{
+	cin>>name;
+    }
+    cout<<"filename :"<<name<<endl<<endl;;
+   // cout<<"PATTERN1:"<<endl<<endl;
     vector<vector<bool> > conn;
     int size;
     read_dimacs( name , conn , size);
     clock_t st1 = time( NULL);
     clock_t st2 = clock();
     vector<int> qmax;
-    int qsize;
-    Maxclique m(conn,size);
-    m.mcq( qmax , qsize );
-    cout<<qsize<<endl;
+    int qsize = 0;
+   // Maxclique m(conn,size);
+    
+    //m.mcq( qmax , qsize );
+    //sort( qmax.begin() , qmax.end() );
+    //cout<<"MAXIMUM_CLIQUE : "<<qsize<<endl;
+    //for(auto i:qmax)cout<<i<<' ';
+    //cout<<endl;
+    //cout<<"TIME :"<<((double) (clock()-st2) )/CLOCKS_PER_SEC<<endl<<endl;;
+
+    cout<<"PATTERN2:"<<endl<<endl;
+    st2 = clock();
+    Maxclique m2( conn , size );
+    qmax.clear();
+    qsize = 0;
+    m2.mcqdyn( qmax , qsize );
+    sort( qmax.begin() , qmax.end() );
+    cout<<"MAXIMUM_CLIQUE : "<<qsize<<endl;
+    for(auto i:qmax)cout<<i<<' ';
+    cout<<endl;
+    cout<<"TIME :"<<((double) (clock()-st2) )/CLOCKS_PER_SEC<<endl<<endl;;
+   
     return 0;
 }
 
