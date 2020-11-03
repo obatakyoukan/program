@@ -1,0 +1,197 @@
+/* ------------------------------------- 
+ *
+ *  独自タグ用 css
+ *
+ * ------------------------------------- */
+
+/* border ---------------------------- */
+
+/* preloader ---------------------------- */
+
+/* アクセント ---------------------------- */
+.accent-red {
+  color: #FF0000;
+  font-weight: bold;
+}
+.text-black {
+  color: #191919;
+}
+.text-red {
+  color: #FF0000;
+}
+.text-red2 {
+  color: #AA0000;
+}
+.text-red3 {
+  color: #CA3537;
+}
+.text-orange {
+  color: #FFA200;
+}
+.text-blue {
+  color: #2C578D;
+}
+.text-water {
+  color: #33CCFF;
+}
+.text-yellow {
+  color: #FFDD00;
+}
+.text-gray {
+  color: #696969;
+}
+.text-white {
+  color: #FFFFFF;
+}
+.text-light {
+  color: #AFAFAF;
+}
+.weight-normal {
+  font-weight: normal;
+}
+.large0 {
+  font-size: 1.125em;
+}
+.large {
+  font-size: 1.25em;
+}
+.small0 {
+  font-size: 0.5em;
+}
+.small {
+  font-size: 0.8em;
+}
+.small1 {
+  font-size: 0.75em;
+}
+.small2 {
+  font-size: 0.85em;
+}
+.small3 {
+  font-size: 0.9em;
+}
+
+/* パネル ---------------------------- */
+
+/* スクリーン ---------------------------- */
+
+/* ナビゲーション ---------------------------- */
+
+/* サブナビゲーション ---------------------------- */
+
+/* サイト内検索フォーム、カテゴライズ ---------------------------- */
+.its_ok_my_will_is_good {
+  display: none;
+}
+
+/* サイト内検索フォーム、カテゴライズ white-space */
+
+/* サイト内検索フォーム、カテゴライズ 要素 */
+
+/* pageswitch -------------------------- */
+
+/* tooltip -------------------------- */
+.toolTipElement {
+}
+.block-tip {
+  display: block;
+  height: 100px;
+  width: 100px;
+  visibility: hidden;
+} 
+.block-title {}
+.block-text {}
+
+.navi-tip {
+  display: block;
+  height: 80px;
+  width: 170px;
+} 
+.navi-title {}
+.navi-text {}
+
+.tooltip_return {
+  display: block;
+  height: 100px;
+  width: 100px;
+  background-image: url(../img/common/tooltip_return2.png);
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+* html body .tooltip_return {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/common/tooltip_return2.png');
+  background-image: none;
+}
+
+/* padding（spacer -------------------------- */
+.padding6 {
+  padding: 0px 6px 0px 6px;
+  cursor: default;
+}
+.padding12 {
+  padding: 0px 12px 0px 12px;
+  cursor: default;
+}
+.padding18 {
+  padding: 0px 18px 0px 18px;
+  cursor: default;
+}
+
+/* spacer -------------------------- */
+.spacer1, .spacer6, .spacer12, .spacer18, .spacer24, .spacer30, .spacer36, .spacer48, .spacer60, .spacer1000 {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+.spacer1    { height:   1px; }
+.spacer6    { height:   6px; }
+.spacer12   { height:  12px; }
+.spacer18   { height:  18px; }
+.spacer24   { height:  24px; }
+.spacer30   { height:  30px; }
+.spacer36   { height:  36px; }
+.spacer48   { height:  48px; }
+.spacer60   { height:  60px; }
+.spacer1000 { height: 9999px; background-color: #FFFFFF; }
+
+.spacer1dashed { height:  1px; margin: 24px 0px 24px 0px; background-image: url(../img/company/cmp_list_dashed.gif); }
+
+
+/* and others -------------------------- */
+.none {
+	display: none;
+}
+.hidden {
+  visibility: hidden;
+}
+.nomargin {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+/* common ------------ */
+.dashed-split,
+.dashed-split2 {
+  padding: 0px 12px 0px 12px;
+  background-image: url(../image/common/dashed_line.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.dashed-split2 {
+  background-image: url(../image/common/dashed_line2.gif);
+}

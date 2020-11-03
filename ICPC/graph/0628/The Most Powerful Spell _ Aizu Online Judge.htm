@@ -1,0 +1,758 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0069)http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1169&lang=jp -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac chrome chrome7 webkit webkit5 wf-ptsansnarrow-n4-active wf-droidsans-n4-active wf-droidserif-n4-active wf-cousine-n4-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS"><script async="" src="./The Most Powerful Spell _ Aizu Online Judge_files/aizu_oj.json"></script>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+ <!-- for only description.jsp-->
+
+
+
+<title>The Most Powerful Spell | Aizu Online Judge</title>
+
+
+
+<link rel="stylesheet" href="./The Most Powerful Spell _ Aizu Online Judge_files/frame.css" type="text/css" media="all">
+<link rel="stylesheet" href="./The Most Powerful Spell _ Aizu Online Judge_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="./The Most Powerful Spell _ Aizu Online Judge_files/sp.css" type="text/css" media="all">
+<link rel="stylesheet" href="./The Most Powerful Spell _ Aizu Online Judge_files/login.css" type="text/css" media="all">
+<link rel="shortcut icon" href="http://judge.u-aizu.ac.jp/onlinejudge/favicon.ico">
+<!--<script src="http://www.google.com/jsapi"></script>-->
+<script type="text/javascript" async="" src="./The Most Powerful Spell _ Aizu Online Judge_files/ga.js"></script><script language="JavaScript" type="text/javascript" src="./The Most Powerful Spell _ Aizu Online Judge_files/google_jsapi.js"></script>
+<script>
+google.load("chrome-frame", "1.0.2");
+google.load("jquery", "1.5.1");
+google.load("jqueryui", "1.8.10");
+google.load("webfont", "1.0.19");
+google.setOnLoadCallback(function(){WebFont.load({google: {families: ['PT Sans Narrow','Droid Sans','Droid Serif','Cousine']}});});</script><script src="./The Most Powerful Spell _ Aizu Online Judge_files/CFInstall.min.js" type="text/javascript"></script><script src="./The Most Powerful Spell _ Aizu Online Judge_files/jquery.min.js" type="text/javascript"></script><script src="./The Most Powerful Spell _ Aizu Online Judge_files/jquery-ui.min.js" type="text/javascript"></script><script src="./The Most Powerful Spell _ Aizu Online Judge_files/webfont.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript" src="./The Most Powerful Spell _ Aizu Online Judge_files/jquery.browser.js"></script>
+<script language="JavaScript" type="text/javascript" src="./The Most Powerful Spell _ Aizu Online Judge_files/jquery.cookie.js"></script>
+<script language="JavaScript" type="text/javascript" src="./The Most Powerful Spell _ Aizu Online Judge_files/script.js"></script>
+<script language="JavaScript" type="text/javascript" src="./The Most Powerful Spell _ Aizu Online Judge_files/login.js"></script>
+<script language="JavaScript" type="text/javascript" src="./The Most Powerful Spell _ Aizu Online Judge_files/varmath2017.js" charset="UTF-8"></script>
+<!-- icon -->
+<!-- <link rel="shortcut icon" href="http://" />???-->
+
+<link rel="stylesheet" href="./The Most Powerful Spell _ Aizu Online Judge_files/jquery-ui-1.8.6.custom.css" type="text/css">
+<link rel="stylesheet" href="./The Most Powerful Spell _ Aizu Online Judge_files/rose.css" type="text/css">
+<link rel="stylesheet" href="./The Most Powerful Spell _ Aizu Online Judge_files/description.css" type="text/css">
+<script language="JavaScript" type="text/javascript" src="./The Most Powerful Spell _ Aizu Online Judge_files/analytics.js"></script><link rel="stylesheet" href="./The Most Powerful Spell _ Aizu Online Judge_files/css">
+
+</head>
+<body id="niceBody" class="goodStyle">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+    $('#tree #treeProblem .trigger2').each(function(i) {
+        $(this).hover(
+            function(){
+                var menuPos = $(this).position();
+                var w = 173 + $(this).width();
+                var tl = menuPos.top + 40;
+                var targetSubTree = i+1;
+                $('#nav #subtree').attr('data-target', 0).css({'margin': '' + tl + 'px 0px 0px ' + w + 'px'}).show();
+                $('#nav #subtree .dat').hide();
+                $('#nav #subtree .dat:nth-child('+targetSubTree+')').show();
+                $(this).addClass('active');
+            },
+            function(){
+                $(this).removeClass('active');
+                $('#nav #subtree').hide();
+            }
+        );
+    });
+    $('#nav #subtree').hover(
+            function() {
+                //var targetTrigger = 2 * $('#nav #tree').attr('data-target') + 1; // 2n+1
+                $(this).show();
+                $('#nav #tree').show();
+                //$('#nav #menu a:nth-child('+targetTrigger+')').addClass('active');
+            },
+            function(){
+                $(this).hide();
+                //$('#nav #menu .trigger').removeClass('active');
+            }
+    );
+    $('#menu .trigger').hover(
+            function(){
+                 $('#nav #subtree').hide();
+            }
+    );
+
+    $.ajax({
+        type:'get',
+        url: 'https://judgeapi.u-aizu.ac.jp/self',
+        xhrFields: {
+          withCredentials: true
+        },
+        success : function(data) {
+            $('#login_new').hide();
+            $('#logout_new').show();
+	    $('#mystatus').html('<a href="user.jsp?id=' + data.id + '" id="status">My Status</a>');
+            if (document.getElementById("submit_language") != null ) {
+              $('#submit_language').val(data.defaultProgrammingLanguage);
+            }
+        },
+        error : function(data) {
+            $('#login_new').show();
+            $('#logout_new').hide();
+        }
+    });
+});
+</script>
+
+	<div id="logo" style="left: 270px;"><a href="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp" id="home">AIZU ONLINE JUDGE</a></div>
+	<div id="nav" style="top: 45px;">
+		<div class="wrapper">
+			<div id="menu">
+				<a href="javascript:void(0)" class="link" id="menuPagetop">PAGETOP</a>
+				<div class="split">&nbsp;</div>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1169&amp;lang=jp#" class="link trigger" id="menuProblem">問題セット</a>
+				<div class="split">&nbsp;</div>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/ranking.jsp?criteria=0" class="link trigger" id="menuRank">ランキング</a>
+				<div class="split">&nbsp;</div>
+				<!--<a href="status.jsp" class="link trigger" id="menuStatus">ステータス</a>-->
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/submission.jsp" class="link trigger" id="menuStatus">ステータス</a>
+				<div class="split">&nbsp;</div>
+				<a href="https://onlinejudge.u-aizu.ac.jp/beta/arena.html" class="link trigger" id="menuContest">コンテスト</a>
+				<div class="split">&nbsp;</div>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/course.jsp#all" class="link trigger" id="menuCourse">コース</a>
+				<div class="split">&nbsp;</div>
+
+
+				<span class="spacer1">&nbsp;</span>
+			</div>
+			<div id="tree" data-target="0">
+				<div class="dat" id="treeProblem">
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1169&amp;lang=jp#"><span class="label">Course</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1169&amp;lang=jp#"><span class="label">Challenge</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1169&amp;lang=jp#"><span class="label">Vol. 0-4</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1169&amp;lang=jp#"><span class="label">Vol. 5-6</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1169&amp;lang=jp#"><span class="label">Vol. 10, 15, 30</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1169&amp;lang=jp#"><span class="label">Vol. 11-13, 16</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1169&amp;lang=jp#"><span class="label">Vol. 20-29</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+				</div>
+				<div class="dat" id="treePank">
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/ranking.jsp?criteria=0">問題数順</a>
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/ranking.jsp?criteria=1">レーティング順</a>
+					<a href="https://onlinejudge.u-aizu.ac.jp/#/ranking/leaderboards">Leaderboards</a>
+					<!--<a href="ranking.jsp?criteria=2">差分順</a>-->
+				</div>
+				<div class="dat" id="treeStatus">
+					<!--<a href="status.jsp">最新の200件</a>-->
+					<!--<a href="status.jsp">Last 100 Sub.</a>-->
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/submission.jsp">Last 100 Sub.</a>
+					<!--<a href="#">ユーザ詳細</a>-->
+				</div>
+				<div class="dat" id="treeContest">
+					<a href="https://onlinejudge.u-aizu.ac.jp/beta/arena.html#contest">Contest</a>
+					<a href="https://onlinejudge.u-aizu.ac.jp/beta/arena.html#virtual">Virtual</a>
+					<!--<a href="#">ユーザ詳細</a>-->
+				</div>
+				<div class="dat" id="treeCourse">
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/course.jsp#all">All</a>
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/course.jsp#lesson">Lesson</a>
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/course.jsp#library">Library</a>
+				</div>
+			</div>
+			<div id="subtree">
+			  <div class="dat" data-target="0">
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=ITP1">Introduction to Programming I</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=ALDS1">Introduction to Algorithms and Data Structures</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=ITP2">Introduction to Programming II</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=DSL">Library of Data Sets and Queries</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=GRL">Library of Graph Algorithms</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=CGL">Library of Computational Geometry</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=DPL">Library of Discrete Optimization Problems</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=NTL">Library of Number Theory</a>
+			  </div>
+			  <div class="dat" data-target="1">
+			    <!--<a href="finder.jsp?source=JOI/Trial">Japanese Olympiad in Informatics: Trial</a>-->
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=JOI/Prelim">Japanese Olympiad in Informatics: Prelim</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=JOI/Final">Japanese Olympiad in Informatics: Final</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=PCK/Prelim">All-Japan High School Programming Contest: Prelim</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=PCK/Final">All-Japan High School Programming Contest: Final</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=ICPC/Prelim">ACM-ICPC Japan Preliminary Contest</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=ICPC/Regional">ACM-ICPC Asia Regional</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=JAG/Prelim">ACM-ICPC JAG Programming Contests: Prelim</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=JAG/Regional">ACM-ICPC JAG Programming Contests: Regional</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=JAG/Summer">ACM-ICPC JAG Programming Contests: Summer</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=JAG/Winter">ACM-ICPC JAG Programming Contests: Winter</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=JAG/Spring">ACM-ICPC JAG Programming Contests: Spring</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=VPC">Voluntary Programming Contest</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?source=UOA">University of Aizu Programming Contest</a>
+			    <!--
+			    <a href="finder.jsp?source=VPC/RUPC">VPC/RUPC</a>
+			    <a href="finder.jsp?source=VPC/HUPC">VPC/HUPC</a>
+			    <a href="finder.jsp?source=VPC/KUPC">VPC/KUPC</a>
+			    <a href="finder.jsp?source=VPC/UTPC">VPC/UTPC</a>
+			    <a href="finder.jsp?source=VPC/OUPC">VPC/OUPC</a>
+			    <a href="finder.jsp?source=VPC/UECPC">VPC/UECPC</a>
+			    <a href="finder.jsp?source=UOA/UAPC">UOA/UAPC</a>
+			    <a href="finder.jsp?source=UOA/PCKWU">UOA/PCKWU</a>
+			    -->
+			  </div>
+			  <div class="dat" data-target="2">
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=0"><span class="label">Volume 0: </span><span class="caption">All-Japan High School Programming Contest.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=1"><span class="label">Volume 1: </span><span class="caption">All-Japan High School Programming Contest.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=2"><span class="label">Volume 2: </span><span class="caption">All-Japan High School Programming Contest.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=3"><span class="label">Volume 3: </span><span class="caption">All-Japan High School Programming Contest.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=4"><span class="label">Volume 4: </span><span class="caption">All-Japan High School Programming Contest.</span></a>
+			  </div>
+			  <div class="dat" data-target="3">
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=5"><span class="label">Volume 5: </span><span class="caption">Japanese Olympiad in Informatics.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=6"><span class="label">Volume 6: </span><span class="caption">Japanese Olympiad in Informatics.</span></a>
+			  </div>
+			  <div class="dat" data-target="4">
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=10"><span class="label">Volume 10: </span><span class="caption"> &nbsp; University of Aizu Programming Contest.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=15"><span class="label">Volume 15: </span><span class="caption"> &nbsp; University of Aizu Programming Contest.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=30"><span class="label">Volume 30: </span><span class="caption"> &nbsp; University of Aizu Programming Contest.</span></a>
+			  </div>
+			  <div class="dat" data-target="5">
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=11"><span class="label">Volume 11: </span><span class="caption"> &nbsp; ACM-ICPC Japan Domestic Contest.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=12"><span class="label">Volume 12: </span><span class="caption"> &nbsp; ACM-ICPC Asia Regional in Japan.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=13"><span class="label">Volume 13: </span><span class="caption"> &nbsp; ACM-ICPC Asia Regional in Japan.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=16"><span class="label">Volume 16: </span><span class="caption"> &nbsp; ACM-ICPC Japan Domestic Contest.</span></a>
+			  </div>
+			  <div class="dat" data-target="6">
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=20"><span class="label">Volume 20: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=21"><span class="label">Volume 21: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=22"><span class="label">Volume 22: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=23"><span class="label">Volume 23: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=24"><span class="label">Volume 24: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=25"><span class="label">Volume 25: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=26"><span class="label">Volume 26: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=27"><span class="label">Volume 27: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=28"><span class="label">Volume 28: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=29"><span class="label">Volume 29: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			  </div>
+
+			</div>
+
+			<div id="user">
+			  <a href="http://judge.u-aizu.ac.jp/onlinejudge/signin.jsp" class="signup" id="login_new" style="display: none;"><span class="line">ログイン</span></a>
+			  <a href="http://judge.u-aizu.ac.jp/onlinejudge/signout.jsp" class="signup" id="logout_new"><span class="line">ログアウト</span></a>
+
+			  <a href="javascript:void(0);" class="signup" id="register"><span class="line">登録・設定</span></a>
+			  <div id="registerBox" class="userBox">     
+			    <form id="registerForm" class="userForm" method="post" action="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp">
+			      <fieldset id="body">
+			      <a href="http://judge.u-aizu.ac.jp/onlinejudge/register.jsp">登録・設定</a>
+				<span class="spacer1">&nbsp;</span>
+			      <a href="http://judge.u-aizu.ac.jp/onlinejudge/update.jsp">登録情報更新</a>
+				<span class="spacer1">&nbsp;</span>
+			      <a href="http://judge.u-aizu.ac.jp/onlinejudge/psupdate.jsp">パスワード変更</a>
+			      </fieldset>
+			    </form>
+			  </div>
+			</div>
+
+
+			<div id="user_old" style="display:none">
+			  
+			  <a href="javascript:void(0);" class="signup" id="login"><span class="line">ログイン</span></a>
+			  <div id="loginBox" class="userBox">     
+			    <form id="loginForm" class="userForm" method="post" action="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1169&amp;lang=jp">
+			      <fieldset id="body">
+				<fieldset>
+				  <label for="loginUserID">ユーザ ID</label>
+				  <input type="text" name="loginUserID" id="loginUserID">
+				</fieldset>
+				<fieldset>
+				  <label for="loginPassword">パスワード</label>
+				  <input type="password" name="loginPassword" id="loginPassword">
+				</fieldset>
+				<input type="submit" name="submit" id="logininput" value="Sign in">
+				
+				<!--<label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>-->
+			      </fieldset>
+			      <!--<span><a href="#">Forgot your password?</a></span>-->
+			    </form>
+			  </div>
+			  <a href="javascript:void(0);" class="signup" id="register"><span class="line">登録・設定</span></a>
+			  <div id="registerBox" class="userBox">     
+			    <form id="registerForm" class="userForm" method="post" action="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp">
+			      <fieldset id="body">
+			      <a href="http://judge.u-aizu.ac.jp/onlinejudge/register.jsp">登録・設定</a>
+				<span class="spacer1">&nbsp;</span>
+			      <a href="http://judge.u-aizu.ac.jp/onlinejudge/update.jsp">登録情報更新</a>
+				<span class="spacer1">&nbsp;</span>
+			      <a href="http://judge.u-aizu.ac.jp/onlinejudge/psupdate.jsp">パスワード変更</a>
+			      </fieldset>
+			    </form>
+			  </div>
+		
+
+			  
+			</div>
+		</div>
+	</div>
+	<div id="header">
+		<div class="wrapper">
+			<div id="lang">
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp?lang=ja" id="langJp">日本語</a>
+				<span class="padding6 small0">&nbsp;</span>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp?lang=en" id="langEn" class="active">英語</a>
+			</div>
+			<div id="pwd">
+                           <span id="mystatus"><a href="http://judge.u-aizu.ac.jp/onlinejudge/user.jsp?id=obata0430" id="status">My Status</a></span>
+			  
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/introduction.jsp" id="help">はじめての方へ&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp" class="now">HOME</a><span class="padding6">-</span>
+			<a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=11" class="now">Volume11</a><span class="padding6">-</span>1169</div>
+		</div>
+	</div>
+
+
+
+<script type="text/javascript">
+$(function(){
+    $('#dialog').dialog({
+        width:740,
+        autoOpen: false,
+        title:'提出フォーム',
+
+        buttons: {
+            '提出する': function(){
+                var len = $('#source').val().length;
+                if ( len > 30000 ){
+                    alert('The source code is too long.');
+                } else {
+                    $('#sform').submit();
+                }
+            },
+            'リセット': function(){
+                $('#source').val('');
+            },
+            'キャンセル': function() { 
+                $(this).dialog("close"); 
+            }
+       }
+    });
+    // Dialog Link
+/*
+    $('#problemSubmit').click(function(){
+        $('#dialog').dialog('open');
+        return false;
+    });
+*/
+    $('#problemSubmit2').click(function(){
+        $('#dialog').dialog('open');
+        return false;
+    });
+});
+</script>
+
+
+
+
+
+
+<div id="contents">
+	<div id="pageinfo">
+		<div class="wrapper">
+			<div class="subinfo">
+                              
+				<!--<a href="problem_tags.jsp?pid=1169" id="problemTag" class="icon" title="Tag">Tag</a>-->
+				<!--<a href="annotation.jsp?pid=1169" id="problemTag" class="icon" title="Tag">Tag</a>-->
+				<a href="https://onlinejudge.u-aizu.ac.jp/services/tagging.html#1169" id="problemTag" class="icon" title="Tag">Tag</a>
+				<!--<a href="board.jsp?pid=1169" id="problemDiscussion" class="icon" title="Discussion">Discussion</a>-->
+				<a href="https://onlinejudge.u-aizu.ac.jp/services/bbs/#/threadboard/1169" target="_blank" id="problemDiscussion" class="icon" title="Discussion">Discussion</a>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/solution.jsp?pid=1169" id="problemSolution" class="icon" title="Solution">Solution</a>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/problem_statistics.jsp?id=1169" id="problemStatistics" class="icon" title="Statistics">Statistics</a>
+				<!--<a href="#" id="problemSubmit" class="icon" title="Submit">Submit</a>-->
+				<!--<a href="status.jsp#submit/1169" id="problemSubmit" class="icon" title="Submit">Submit</a>-->
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/submission.jsp#submit/1169" id="problemSubmit" class="icon" title="Submit">Submit</a>
+
+                              
+				<div class="spacer1">&nbsp;</div>
+
+                                
+                                <!--<span style="font-size:7pt"><a href="#" style="color:#888888" id="problemSubmit2">Submit [Old Version]</a></span><br>-->
+                                <span style="font-size:7pt"></span><br>
+                                
+                                <div class="dat">
+				
+				<a href="http://icpc2010.honiden.nii.ac.jp/">ICPC Domestic 2010</a>
+				
+                                </div>
+				
+
+			</div>
+                        
+			<h1 class="title">The Most Powerful Spell</h1>
+                        
+			<span class="text-red3">時間制限 : 8 sec, メモリ制限 : 131072 KB</span>
+
+
+   
+      <br><span class="text"><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1169">英語版はこちら</a></span>
+
+   
+
+		</div>
+	</div>
+	<div id="page">
+	  <div class="wrapper">
+	    <div class="description">
+	        
+		
+
+                
+
+	        
+<!-- begin ja only -->
+<h1><font color="#000000">Problem E:</font> 最強の呪文</h1>
+<!-- end ja only -->
+
+
+<!-- begin ja only -->
+<p>
+昔々，多くの「魔法の紋様」を発明した魔法使いがいた．
+彼の発明した魔法の紋様が床に描かれた部屋では，
+呪文を唱えることで，誰でも魔法が使えるようになるのだ！
+ただし，使える呪文は紋様によってまちまちである．
+あなたの仕事は，指定された魔法の紋様に対し，
+それによって使用可能となる呪文のうち，最強のものを突き止めることだ．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+呪文は，英小文字の文字列であり，
+特に辞書順で早ければ早い呪文であるほど，強い呪文である．
+ここで文字列 w が文字列 u より辞書順で早いとは，
+w と u とで異なる最初の文字が a&lt;b&lt;...&lt;z の順序で小さいか，
+または w が u の接頭辞であることを言う．
+例として，"abcd" は "abe" より早く（文字 c は e より小さいため），
+また，"abe" は "abef" より早い（接頭辞になっているため）．
+</p>
+<!-- end ja only -->
+
+
+<!-- begin ja only -->
+<p>
+魔法の紋様は，番号のついた <em>節点</em> と，それらを結ぶ<em>矢印</em>
+からなる図形である．
+矢印には <em>ラベル</em> と呼ばれる小文字の文字列がついている．
+また，<em>スター</em> と<em>ゴールド</em> と呼ばれる，
+二つの特別な節点がある．
+魔法の紋様によって使えるようになる呪文とはすなわち，
+その紋様のスターからゴールドへと矢印をたどって得られるラベルを順に結合して得られる文字列である．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+次に，四つの節点と7本の矢印からなる例を図示する．
+</p>
+<center>
+<img src="./The Most Powerful Spell _ Aizu Online Judge_files/D2010_E-4.png" width="312" height="283" alt="picture: sample dataset 1">
+</center>
+<!-- end ja only -->
+
+<!--
+<img src="E-1.png" width="272" height="283" alt="picture: sample dataset 1">
+-->
+
+<!-- begin ja only -->
+<p>
+0 がスター，2 がゴールドである．
+この魔法の紋様によって，例えば
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;
+ 0 --"abra"--&gt; 1 --"cada"--&gt; 3 --"bra"--&gt; 2
+</p><p>
+という経路から得られる呪文 "abracadabra" が使えるようになる．他には，
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;
+ 0 --"oil"--&gt; 1 --"cada"--&gt; 3 --"bra"--&gt; 2 --"ket"--&gt; 3 --"da"--&gt; 3 --"da"--&gt; 3 --"bra"--&gt; 2
+</p><p>
+から得られる "oilcadabraketdadabra" などもある．
+"abracadabra" と "oilcadabraketdadabra" では前者の方が辞書順で早いので，より強い呪文である．
+実は，この魔法の紋様で使用可能となる呪文で "abracadabra" 以上に強いものは存在しない．
+従ってこの場合，あなたが求めるべき答えは "abracadabra" となる．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+もしも，最強の呪文が定められないときには，"NO" と答えて欲しい．
+これには二つの場合がある．一つは，スターからゴールドへ到達できない場合である．
+もう一つは，どんな呪文をとっても，
+それよりさらに強い呪文が存在するような場合である．
+たとえば次の図のような魔法の紋様では，
+"b" よりも "ab" が強く，
+"ab" よりも "aab" が強いといったように，
+どの呪文をとってもさらに一つ a を増やすと，辞書順で早い，より強い呪文となる．
+</p>
+<!-- end ja only -->
+
+<center>
+<img src="./The Most Powerful Spell _ Aizu Online Judge_files/D2010_E-2.png" width="242" height="123" alt="picture: sample dataset 2">
+</center>
+
+
+<h3>Input</h3>
+
+
+<!-- begin ja only -->
+<p>
+入力は最大で150個のデータセットからなる．
+各データセットの形式は次のとおりである．
+</p>
+<!-- end ja only -->
+
+<blockquote>
+<i>n a s g</i><br>
+<i>x</i><sub>1</sub> <i>y</i><sub>1</sub> <i>lab</i><sub>1</sub><br>
+<i>x</i><sub>2</sub> <i>y</i><sub>2</sub> <i>lab</i><sub>2</sub><br>
+...<br>
+<i>x<sub>a</sub> <i>y</i><sub>a</sub> <i>lab</i><sub>a</sub></i><br>
+
+</blockquote>
+
+<!-- begin ja only -->
+<p>
+データセットの最初の行は4個の整数を含む．<i>n</i> は節点の数，<i>a</i> は矢印の数を表す．
+<i>s</i> と <i>g</i> はそれぞれスターとゴールドの番号を示す．
+続く <i>a</i> 行はそれぞれ2個の整数と1個の文字列からなり，矢印の情報を表す．
+<i>x<sub>i</sub></i> <i>y<sub>i</sub></i> <i>lab<sub>i</sub></i> という行は，
+節点 <i>x<sub>i</sub></i> から出て節点 <i>y<sub>i</sub></i> を指す，
+ラベルが <i>lab<sub>i</sub></i> の矢印を表している．
+データセット中の値は次の条件を満たす：
+2 &#8804; <i>n</i> &#8804; 40,
+0 &#8804; <i>a</i> &#8804; 400,
+0 &#8804; <i>s</i>, <i>g</i>, <i>x<sub>i</sub></i>&nbsp;, <i>y<sub>i</sub></i> &lt; <i>n</i>.
+<i>s</i> ≠<i>g</i>,
+<i>lab<sub>i</sub></i> は長さ1以上6以下の，英小文字のみからなる文字列である．
+矢印の両端が同一節点の場合 (<i>x<sub>i</sub></i> = <i>y<sub>i</sub></i> ) や，
+節点の対を複数の矢印が結ぶ場合
+(異なる <i>i, j</i> に対し
+<i>x<sub>i</sub></i> = <i>x<sub>j</sub></i> かつ <i>y<sub>i</sub></i> = <i>y<sub>j</sub></i> )
+もあり得ることに注意して欲しい．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+入力の終わりは4個のゼロからなる行によって与えられる．
+</p>
+<!-- end ja only -->
+
+
+
+<h3>Output</h3>
+
+<!-- begin ja only -->
+<p>
+各データセットについて，最も強い呪文が存在すれば，それぞれ1行に出力しなさい．
+存在しない場合は NO を1行に出力しなさい．
+各出力行はこれ以外の文字を含んではならない．
+</p>
+<!-- end ja only -->
+
+
+
+<h3>Sample Input</h3>
+
+<pre>4 7 0 2
+0 1 abra
+0 1 oil
+2 0 ket
+1 3 cada
+3 3 da
+3 2 bra
+2 3 ket
+2 2 0 1
+0 0 a
+0 1 b
+5 6 3 0
+3 1 op
+3 2 op
+3 4 opq
+1 0 st
+2 0 qr
+4 0 r
+2 1 0 1
+1 1 loooop
+0 0 0 0
+</pre>
+
+
+<h3>Output for the Sample Input</h3>
+
+<pre>abracadabra
+NO
+opqr
+NO
+</pre>
+
+
+
+
+
+
+
+
+
+                
+
+
+
+
+                <hr>
+		  
+		  <div class="dat" style="font-size:10pt">
+                   Source: ACM International Collegiate Programming Contest
+
+		   , Japan Domestic Contest, Tokyo, Japan, 2010-07-02
+
+		   
+		   
+
+		   
+
+                   
+                   <br> <a href="http://icpc2010.honiden.nii.ac.jp/">http://icpc2010.honiden.nii.ac.jp/</a>
+                   
+                   
+		</div>
+		  
+		<div class="spacer60">&nbsp;</div>
+	    </div>
+	  </div>
+	</div>
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+ 
+ $('#pwd').append('<a href="finder.jsp?volumeNo=11" class="now">Volume11</a><span class="padding6">-</span>1169</a>');
+ 
+});
+</script>
+
+</div>
+
+
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-dialog" style="display: none; z-index: 1000; outline: 0px; position: absolute;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-dialog">提出フォーム</span><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1169&amp;lang=jp#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="dialog" style="overflow: hidden;" class="ui-dialog-content ui-widget-content">
+<!-- old form: this service is not available now -->
+<form id="sform" action="http://judge.u-aizu.ac.jp/onlinejudge/servlet/Submit" method="POST">
+<fieldset class="form">
+<table class="form" width="740" border="0" cellspacing="0" cellpadding="0">
+	<tbody><tr>
+		<td width="100"><label>ユーザ ID:</label></td>
+		<td><input type="TEXT" name="userID" value="userID"></td>
+	</tr>
+	<tr>
+		<td width="100"><label>パスワード:</label></td>
+		<td><input type="PASSWORD" name="password" value="password"></td>
+	</tr>
+	<tr>
+	        <td width="100"><label>問題番号:</label></td>
+		<td><input type="TEXT" name="problemNO" value="1169"></td>
+	</tr>
+	<tr>
+	        <td width="100"><label>言語:</label></td>
+		<td>
+		<select name="language">
+		  
+
+                  
+                      <option value="C">C
+                  
+
+		  
+
+                  
+                      </option><option value="C++" selected="selected">C++
+                  
+
+		  
+
+                  
+                      </option><option value="JAVA">JAVA
+                  
+
+		  
+
+                  
+                      </option><option value="C++11">C++11
+                  
+
+		  
+
+                  
+                      </option><option value="C#">C#
+                  
+
+		  
+
+                  
+                      </option><option value="D">D
+                  
+
+		  
+
+                  
+                      </option><option value="Ruby">Ruby
+                  
+
+		  
+
+                  
+                      </option><option value="Python">Python
+                  
+
+		  
+
+                  
+                      </option><option value="Python3">Python3
+                  
+
+		  
+
+                  
+                      </option><option value="PHP">PHP
+                  
+
+		  
+
+                  
+                      </option><option value="JavaScript">JavaScript
+                  
+
+		  
+		</option></select>
+<font color="#aaa">&nbsp; *&nbsp;It depends on the problem</font>
+		</td>
+		</tr>
+	<tr>
+	        <td width="100"><label>ソースコード:</label></td>
+		<td><textarea id="source" name="sourceCode" rows="16" cols="62"></textarea></td>
+	</tr>
+</tbody></table>
+
+</fieldset>
+
+</form>
+
+</div><div class="ui-resizable-handle ui-resizable-n"></div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-s"></div><div class="ui-resizable-handle ui-resizable-w"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004;"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">提出する</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">リセット</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">キャンセル</span></button></div></div></div></body></html>
